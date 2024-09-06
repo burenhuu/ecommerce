@@ -44,13 +44,13 @@ class Qpay(BaseClientSidePaymentProcessor):
     NAME = 'qpay'
     TITLE = 'Q-Pay'
     DEFAULT_PROFILE_NAME = 'default'
-    base_url = get_ecommerce_url()
-    callback_url = get_ecommerce_url()
+    base_url = ''
     invoice_code = ""
     client_id = ""
     client_secret = ""
 
     def __init__(self, site):
+        self.base_url = get_ecommerce_url('')
         super(Qpay, self).__init__(site)
 
     def create(self, basket):
@@ -63,7 +63,7 @@ class Qpay(BaseClientSidePaymentProcessor):
             "invoice_receiver_code": "terminal",
             "invoice_description": "Course",
             "amount": self._get_basket_amount(basket),
-            "callback_url": get_ecommerce_url(f'payment/check/{order_id}/')
+            "callback_url": self.base_url + f'payment/qpay/check/{order_id}/'
         })
         headers = {
             'Content-Type': 'application/json',
