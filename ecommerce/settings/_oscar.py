@@ -138,6 +138,7 @@ PAYMENT_PROCESSORS = (
     'ecommerce.extensions.payment.processors.cybersource.CybersourceREST',
     'ecommerce.extensions.payment.processors.paypal.Paypal',
     'ecommerce.extensions.payment.processors.stripe.Stripe',
+    'ecommerce.extensions.payment.processors.qpay.Qpay',
 )
 
 PAYMENT_PROCESSOR_RECEIPT_PATH = '/checkout/receipt/'
@@ -165,6 +166,12 @@ PAYMENT_PROCESSOR_CONFIG = {
         'paypal': {
             # 'mode' can be either 'sandbox' or 'live'
             'mode': None,
+            'client_id': None,
+            'client_secret': None,
+            'cancel_checkout_path': PAYMENT_PROCESSOR_CANCEL_PATH,
+            'error_path': PAYMENT_PROCESSOR_ERROR_PATH,
+        },
+        'qpay': {
             'client_id': None,
             'client_secret': None,
             'cancel_checkout_path': PAYMENT_PROCESSOR_CANCEL_PATH,
