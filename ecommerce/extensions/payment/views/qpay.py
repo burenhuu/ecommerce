@@ -100,7 +100,7 @@ class QpayCheckView(EdxOrderPlacementMixin, BasePaymentSubmitView):
 
 
 class QpayAPICreateView(EdxOrderPlacementMixin, APIView):
-    http_method_names = ['post']
+    http_method_names = ['get']
 
     permission_classes = [IsAuthenticated]
 
@@ -108,7 +108,7 @@ class QpayAPICreateView(EdxOrderPlacementMixin, APIView):
     def payment_processor(self):
         return Qpay(self.request.site)
 
-    def post(self, request):
+    def get(self, request):
         """
         CREATE PAYMENT QPAY
         """

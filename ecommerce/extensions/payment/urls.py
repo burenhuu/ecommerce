@@ -33,7 +33,7 @@ STRIPE_URLS = [
 
 QPAY_URLS = [
     url(r'^create/$', qpay.QpayAPICreateView.as_view(), name='create'),
-    url(r'^check', qpay.QpayCheckView.as_view(), name='check'),
+    url(r'^check', qpay.QpayAPICheckView.as_view(), name='check'),
 ]
 
 urlpatterns = [
