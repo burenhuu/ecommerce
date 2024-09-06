@@ -42,7 +42,7 @@ urlpatterns = [
     url(r'^paypal/', include((PAYPAL_URLS, 'paypal'))),
     url(r'^sdn/', include((SDN_URLS, 'sdn'))),
     url(r'^stripe/', include((STRIPE_URLS, 'stripe'))),
-    url(r'^qpay/', include((STRIPE_URLS, 'qpay'))),
+    url(r'^qpay/', include((QPAY_URLS, 'qpay'))),
 ]
 
 for payment_processor_name, urls_module in settings.EXTRA_PAYMENT_PROCESSOR_URLS.items():
