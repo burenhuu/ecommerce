@@ -44,10 +44,10 @@ class Qpay(BaseClientSidePaymentProcessor):
     NAME = 'qpay'
     TITLE = 'Q-Pay'
     DEFAULT_PROFILE_NAME = 'default'
-    base_url = ''
-    invoice_code = ""
-    client_id = ""
-    client_secret = ""
+    base_url = 'https://ecommerce.e-gurun.org/'
+    invoice_code = "GUREN_SURGALTIN_TULBUR_INVOICE"
+    client_id = "GUREN_SURGALTIN_TULBUR"
+    client_secret = "1r8aGfrz"
 
     def __init__(self, site):
         self.base_url = get_ecommerce_url('')
